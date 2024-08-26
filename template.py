@@ -1,20 +1,21 @@
 import os,sys
 from pathlib import Path
 import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 while True:
     project_name=input("Enter your project name")
     if project_name !='':
         break
 list_of_files=[
     f"{project_name}/__init__.py",#src/__init__.py
-    f"{project_name}/component/__init__py",#src/component/__init__.py
-    f"{project_name}/config/__init__py",
-    f"{project_name}/constants/__init__py",
-    f"{project_name}/entity/__init__py",
-    f"{project_name}/exception/__init__py",
-    f"{project_name}/logger/__init__py",
-    f"{project_name}/pipeline/__init__py",
-    f"{project_name}/utils/__init__py",
+    f"{project_name}/component/__init__.py",#src/component/__init__.py
+    f"{project_name}/config/__init__.py",
+    f"{project_name}/constants/__init__.py",
+    f"{project_name}/entity/__init__.py",
+    f"{project_name}/exception/__init__.py",
+    f"{project_name}/logger/__init__.py",
+    f"{project_name}/pipeline/__init__.py",
+    f"{project_name}/utils/__init__.py",
     f"config/config.yaml",
     "schema.yaml",
     "app.py",
@@ -25,7 +26,9 @@ list_of_files=[
 ]
 for file in list_of_files:
     filepath=Path(file)
+    
     filedr,filename=os.path.split(filepath)
+    print(filedr,filename)
 
     if filedr!="":
         os.makedirs(filedr,exist_ok=True)
